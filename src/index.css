@@ -20,6 +20,19 @@ body{
 {
     cursor: pointer;
 }
+.network{
+    background-color: #fff;
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    z-index: 9999;
+    box-shadow: var(--shadow);
+    padding: 20px;
+}
+.border-main{
+    border: 1px solid var(--main-color) !important; 
+    border-radius: 10px !important;
+}
 a , a:hover{
     color: black !important;
     text-decoration: none !important;
@@ -57,5 +70,3 @@ a , a:hover{
 {
     background-color: var(--light-color) !important;
 }
-
- 

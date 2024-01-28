@@ -8,7 +8,7 @@ import { Bars } from 'react-loader-spinner'
 import { UserContext } from './../../Context/UserContext';
 
 export default function Login() {
-    let {setUserToken} = useContext(UserContext)
+    let {setUserToken,setuserData} = useContext(UserContext)
     let navigate = useNavigate();
     let [error, setError] = useState(null)
     let [loading, setLoading] = useState(false)
@@ -25,6 +25,7 @@ export default function Login() {
             setLoading(false)
             localStorage.setItem('userToken',data.token);
             setUserToken(data.token);
+            setuserData(data.user);
             navigate('/')
         }
     }

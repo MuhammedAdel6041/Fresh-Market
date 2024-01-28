@@ -40,6 +40,9 @@ export default function Navbar() {
                                 <li className="nav-item">
                                     <NavLink className="nav-link" to="Brands">Brands</NavLink>
                                 </li>
+                                <li className="nav-item">
+                                        <NavLink className="nav-link" to="profile">Profile</NavLink>
+                                    </li>
                             </> : ''}
 
 
@@ -59,6 +62,7 @@ export default function Navbar() {
                                     <li className="nav-item">
                                         <NavLink className="nav-link" to="register">Register</NavLink>
                                     </li>
+                                   
                                 </>}
 
 
