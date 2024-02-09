@@ -29,6 +29,18 @@ body{
     box-shadow: var(--shadow);
     padding: 20px;
 }
+.loading{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: var(--main-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+}
 .border-main{
     border: 1px solid var(--main-color) !important; 
     border-radius: 10px !important;

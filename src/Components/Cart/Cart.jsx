@@ -95,7 +95,9 @@ export default function Cart() {
                                 </div>
                             </div>
                         ))}
-                        <button onClick={() => clearCart()} className='btn p-0'>Clear</button>
+                        <button className='btn  bg-main m-3 px-2 text-white  '>Online Payment</button>
+                        <button className='btn  bg-main m-3  px-2 text-white  '>Cash On Delivery</button>
+                        <button onClick={() => clearCart()} className='btn text-white  bg-main m-3'>Clear</button>
                     </div>
                 ) : (
                     <div className="row border-bottom py-2 px-3">

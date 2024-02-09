@@ -15,8 +15,9 @@ import ProductDetails from './Components/ProductDetails/ProductDetails';
 import CartContextProvider from './Context/CartContext';
 import { Toaster } from 'react-hot-toast';
 import Profile from './Components/Profile/Profile';
-
-
+import { Provider } from 'react-redux';
+import { mtore, store } from './Redux/Store';
+import CategoriesDeteilas from './Components/CategoriesDeteilas/CategoriesDeteilas';
 
 
 let routers = createBrowserRouter([
@@ -31,6 +32,7 @@ let routers = createBrowserRouter([
       { path: 'categories', element: <ProtectedRoute>  <Categories />  </ProtectedRoute> },
       { path: 'profile', element: <ProtectedRoute>  <Profile />  </ProtectedRoute> },
       { path: 'ProductDetails/:id', element: <ProtectedRoute>  <ProductDetails />  </ProtectedRoute> },
+      { path: 'CategoriesFetuer/:id', element: <ProtectedRoute>  <CategoriesDeteilas/>  </ProtectedRoute> },
       { path: '*', element: <NotFound /> },
     ]
   }
@@ -47,9 +49,11 @@ export default function App() {
     < >
 
       <CartContextProvider>
-        <RouterProvider router={routers} ></RouterProvider>
-        <Toaster position="top-right"
-          reverseOrder={false} />
+        <Provider store={mtore}>
+          <RouterProvider router={routers} ></RouterProvider>
+          <Toaster position="top-right"
+            reverseOrder={false} />
+        </Provider>
       </CartContextProvider>
     </>
   )

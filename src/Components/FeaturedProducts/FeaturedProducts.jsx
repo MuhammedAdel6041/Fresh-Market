@@ -11,10 +11,10 @@ export default function FeaturedProducts() {
 
     async function addProduct(productId) {
         let response = await addToCart(productId);
-        if(response.data.status === 'success') {
+        if (response.data.status === 'success') {
             toast.success("successfully added to cart")
         }
-        else{
+        else {
             toast.error("Couldn't add to cart")
         }
         console.log(response);
@@ -46,7 +46,8 @@ export default function FeaturedProducts() {
                             barColor=""
                             ariaLabel='circles-with-bar-loading'
                         />
-                    </div> : <div className="container py-2">
+                    </div> :
+                    <div className="container py-2">
                         <h2 className='py-3'>Featured Products</h2>
                         <div className="row">
                             {productsToDisplay.map((counter) => {
@@ -68,11 +69,14 @@ export default function FeaturedProducts() {
                                         <button onClick={() => addProduct(counter.id)} className='btn  bg-main text-white w-100 btn-sm mt-2'> Add to cart</button>
                                     </div>
 
-                                   
+
                                 </div>
                             })}
 
                         </div>
+
+
+
                         {data?.data.data.length > 30 && (
                             <div className="text-center mt-3">
                                 {showAll ? (<button className="btn bg-main text-white" onClick={() => setShowAll(false)}>

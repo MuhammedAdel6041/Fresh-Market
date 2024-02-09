@@ -3,12 +3,20 @@ import logo from '../../Assets/images/freshcart-logo.svg'
 import Style from './Navbar.module.css';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { UserContext } from '../../Context/UserContext';
+import { useSelector } from 'react-redux';
 
 export default function Navbar() {
-    let { userToken ,setUserToken} = useContext(UserContext)
+
+
+    let { counter } = useSelector((state) => state.counter)
+
+
+    console.log('this is ' + counter);
+
+    let { userToken, setUserToken } = useContext(UserContext)
     let logOutNavegate = useNavigate()
 
-    function logOut(){
+    function logOut() {
         localStorage.removeItem('userToken');
         setUserToken(null);
         logOutNavegate('/login')
@@ -41,8 +49,9 @@ export default function Navbar() {
                                     <NavLink className="nav-link" to="Brands">Brands</NavLink>
                                 </li>
                                 <li className="nav-item">
-                                        <NavLink className="nav-link" to="profile">Profile</NavLink>
-                                    </li>
+                                    <NavLink className="nav-link" to="profile">Profile</NavLink>
+                                </li>
+
                             </> : ''}
 
 
@@ -52,8 +61,12 @@ export default function Navbar() {
                             {userToken !== null ?
                                 <>
                                     <li className="nav-item">
-                                        <span className="nav-link cursor-pointer" onClick={()=>{logOut()}} to=""  >LogOut</span>
+                                        <NavLink className="nav-link" to="cart"><i class="fa-solid fa-cart-shopping"> {counter}</i></NavLink>
                                     </li>
+                                    <li className="nav-item">
+                                        <span className="nav-link cursor-pointer" onClick={() => { logOut() }} to=""  >LogOut</span>
+                                    </li>
+
                                 </> :
                                 <>
                                     <li className="nav-item">
@@ -62,7 +75,7 @@ export default function Navbar() {
                                     <li className="nav-item">
                                         <NavLink className="nav-link" to="register">Register</NavLink>
                                     </li>
-                                   
+
                                 </>}
 
 

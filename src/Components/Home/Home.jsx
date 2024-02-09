@@ -4,13 +4,14 @@ import FeaturedProducts from '../FeaturedProducts/FeaturedProducts';
 import CategorySlider from '../CategorySlider/CategorySlider';
 import MainSlider from '../MainSlider/MainSlider';
 import { Helmet } from 'react-helmet';
+import useNetwork from '../../Hooks/useNetwork';
 
 
 
 
 export default function Home() {
 
-
+    let detect =useNetwork()
 
     return (
         < >
@@ -20,6 +21,8 @@ export default function Home() {
                 <link rel="canonical" href="http://mysite.com/example" />
             </Helmet>
             <MainSlider />
+            {detect}
+
             <CategorySlider />
             <FeaturedProducts />
 

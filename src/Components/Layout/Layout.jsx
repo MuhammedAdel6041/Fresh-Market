@@ -14,11 +14,11 @@ export default function Layout() {
                 <Outlet />
             </div>
             <div>
-                <Offline>
+                {/* <Offline>
                     <div className="network">
                      <i className='fas fa-wifi'></i>  You are offline (surprise!)
                     </div>
-                </Offline>
+                </Offline> */}
             </div>
             <Footer />
         </>
